@@ -143,7 +143,7 @@ class listener implements EventSubscriberInterface
 		{
 			$time = $this->user->create_datetime();
 			$now = phpbb_gmgetdate($time->getTimestamp() + $time->getOffset());
-			
+
 			list($bday, $bmonth) = array_map('intval', explode('-', $user_birthday));
 
 			if ($bday === (int) $now['mday'] && $bmonth === (int) $now['mon'])
