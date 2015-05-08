@@ -1,0 +1,15 @@
+imports:
+    - { resource: birthdaycakepath.yml }
+
+services:
+    rmcgirr83.birthdaycake.listener:
+        class: rmcgirr83\birthdaycake\event\listener
+        arguments:
+            - @request
+            - @template
+            - @user
+            - %core.root_path%
+            - %core.php_ext%
+            - %rmcgirr83.birthdaycake.imagepath%
+        tags:
+            - { name: event.listener }
